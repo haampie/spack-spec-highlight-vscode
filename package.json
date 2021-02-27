@@ -1,0 +1,25 @@
+{
+    "name": "spack",
+    "displayName": "Spack spec highlighting",
+    "description": "Syntax highlighting for the Spack spec domain-specific language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "spack",
+            "aliases": ["spack", "spack"],
+            "extensions": ["spec"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "spack",
+            "scopeName": "source.spack",
+            "path": "./syntaxes/spack.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "spack",
+	"patterns": [
+		{
+			"include": "#compiler"
+		},
+		{
+			"include": "#variant"
+		},
+		{
+			"include": "#arch"
+		},
+		{
+			"include": "#version"
+		},
+		{
+			"include": "#variant_with_value"
+		}
+	],
+	"repository": {
+		"compiler": {
+			"patterns": [{
+				"name": "comment.line.double-slash.spack",
+				"match": "%[^\\s%+~]+"
+			}]
+		},
+		"variant": {
+			"name": "string.quoted.double.spack",
+			"patterns": [{
+				"name": "constant.numeric.spack",
+				"match": "[+~][^\\s%+~@]+"
+			}]
+		},
+		"arch": {
+			"name": "variable",
+			"patterns": [{
+				"name": "keyword.control.spack",
+				"match": "\\barch=[^\\s%+~@]+"
+			}]
+		},
+		"version": {
+			"name": "version",
+			"patterns": [{
+				"name": "constant.language.spack",
+				"match": "@[^\\s%+~@]+"
+			}]
+		},
+		"variant_with_value": {
+			"name": "string.quoted.double.spack",
+			"patterns": [{
+				"name": "constant.numeric.spack",
+				"match": "[^\\s%+~@]+=[^\\s%+~@]+"
+			}]
+		}
+	},
+	"scopeName": "source.spack"
+}
